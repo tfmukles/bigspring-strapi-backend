@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentFaqItem extends Struct.ComponentSchema {
+  collectionName: 'components_component_faq_items';
+  info: {
+    displayName: 'faq item';
+  };
+  attributes: {
+    answer: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentFeatures extends Struct.ComponentSchema {
   collectionName: 'components_component_features';
   info: {
@@ -10,6 +21,44 @@ export interface ComponentFeatures extends Struct.ComponentSchema {
     content: Schema.Attribute.Text;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentInfo extends Struct.ComponentSchema {
+  collectionName: 'components_component_infos';
+  info: {
+    displayName: 'info';
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'shared.strings', true>;
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_component_menu_items';
+  info: {
+    displayName: 'menu-item';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentPlanItem extends Struct.ComponentSchema {
+  collectionName: 'components_component_plan_items';
+  info: {
+    description: '';
+    displayName: 'plan item';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    features: Schema.Attribute.Component<'shared.strings', true>;
+    price: Schema.Attribute.Decimal;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -66,6 +115,17 @@ export interface DynamicZoneFeatures extends Struct.ComponentSchema {
   attributes: {
     features: Schema.Attribute.Component<'component.features', true>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneFooter extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_footers';
+  info: {
+    displayName: 'footer';
+  };
+  attributes: {
+    menu: Schema.Attribute.Component<'component.menu-item', true>;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -128,19 +188,36 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStrings extends Struct.ComponentSchema {
+  collectionName: 'components_shared_strings';
+  info: {
+    description: '';
+    displayName: 'strings';
+  };
+  attributes: {
+    value: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'component.faq-item': ComponentFaqItem;
       'component.features': ComponentFeatures;
+      'component.info': ComponentInfo;
+      'component.menu-item': ComponentMenuItem;
+      'component.plan-item': ComponentPlanItem;
       'component.service-item': ComponentServiceItem;
       'dynamic-zone.banner': DynamicZoneBanner;
       'dynamic-zone.call-to-action': DynamicZoneCallToAction;
       'dynamic-zone.features': DynamicZoneFeatures;
+      'dynamic-zone.footer': DynamicZoneFooter;
       'shared.button': SharedButton;
       'shared.gallery': SharedGallery;
       'shared.intro': SharedIntro;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.strings': SharedStrings;
     }
   }
 }

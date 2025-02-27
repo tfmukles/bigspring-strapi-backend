@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "call_to_actions",
+  "info": {
+    "singularName": "call-to-action",
+    "pluralName": "call-to-actions",
+    "displayName": "call to action"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button"
+    }
+  }
+}
