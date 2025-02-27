@@ -21,6 +21,11 @@
       "type": "component",
       "repeatable": false,
       "component": "component.info"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.strings"
     }
   }
 }

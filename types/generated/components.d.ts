@@ -28,10 +28,10 @@ export interface ComponentFeatures extends Struct.ComponentSchema {
 export interface ComponentInfo extends Struct.ComponentSchema {
   collectionName: 'components_component_infos';
   info: {
+    description: '';
     displayName: 'info';
   };
   attributes: {
-    contacts: Schema.Attribute.Component<'shared.strings', true>;
     description: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -252,7 +252,9 @@ export interface SharedStrings extends Struct.ComponentSchema {
     description: '';
     displayName: 'strings';
   };
-  attributes: {};
+  attributes: {
+    value: Schema.Attribute.String;
+  };
 }
 
 declare module '@strapi/strapi' {
