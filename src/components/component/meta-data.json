@@ -1,18 +1,26 @@
 {
   "collectionName": "components_component_meta_data",
   "info": {
-    "displayName": "Meta Data"
+    "displayName": "Meta Data",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "metaAuthor": {
       "type": "string"
     },
-    "metaImage": {
-      "type": "string"
-    },
     "metaDescription": {
       "type": "string"
+    },
+    "metaImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

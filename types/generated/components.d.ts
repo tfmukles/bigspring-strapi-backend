@@ -40,7 +40,8 @@ export interface ComponentInfo extends Struct.ComponentSchema {
 export interface ComponentMenuItem extends Struct.ComponentSchema {
   collectionName: 'components_component_menu_items';
   info: {
-    displayName: 'menu-item';
+    description: '';
+    displayName: 'menu item';
   };
   attributes: {
     name: Schema.Attribute.String;
@@ -51,23 +52,25 @@ export interface ComponentMenuItem extends Struct.ComponentSchema {
 export interface ComponentMetaData extends Struct.ComponentSchema {
   collectionName: 'components_component_meta_data';
   info: {
+    description: '';
     displayName: 'Meta Data';
   };
   attributes: {
     metaAuthor: Schema.Attribute.String;
     metaDescription: Schema.Attribute.String;
-    metaImage: Schema.Attribute.String;
+    metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
 export interface ComponentParams extends Struct.ComponentSchema {
   collectionName: 'components_component_params';
   info: {
+    description: '';
     displayName: 'Params';
   };
   attributes: {
     contactFormAction: Schema.Attribute.String;
-    copyRight: Schema.Attribute.String;
+    copyright: Schema.Attribute.String;
     footerContent: Schema.Attribute.String;
     tagManagerId: Schema.Attribute.String;
   };
