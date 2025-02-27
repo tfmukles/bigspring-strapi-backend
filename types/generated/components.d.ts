@@ -249,9 +249,7 @@ export interface SharedStrings extends Struct.ComponentSchema {
     description: '';
     displayName: 'strings';
   };
-  attributes: {
-    value: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 declare module '@strapi/strapi' {

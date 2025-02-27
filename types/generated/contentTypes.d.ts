@@ -427,6 +427,39 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConfigConfig extends Struct.SingleTypeSchema {
+  collectionName: 'configs';
+  info: {
+    description: '';
+    displayName: 'config';
+    pluralName: 'configs';
+    singularName: 'config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::config.config'
+    > &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'component.meta-data', false>;
+    navButton: Schema.Attribute.Component<'shared.button', false>;
+    params: Schema.Attribute.Component<'component.params', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    settings: Schema.Attribute.Component<'dynamic-zone.setting', false>;
+    site: Schema.Attribute.Component<'dynamic-zone.site', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -1125,6 +1158,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog-index.blog-index': ApiBlogIndexBlogIndex;
       'api::blog.blog': ApiBlogBlog;
+      'api::config.config': ApiConfigConfig;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::homepage.homepage': ApiHomepageHomepage;
