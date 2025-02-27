@@ -48,6 +48,31 @@ export interface ComponentMenuItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentMetaData extends Struct.ComponentSchema {
+  collectionName: 'components_component_meta_data';
+  info: {
+    displayName: 'Meta Data';
+  };
+  attributes: {
+    metaAuthor: Schema.Attribute.String;
+    metaDescription: Schema.Attribute.String;
+    metaImage: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentParams extends Struct.ComponentSchema {
+  collectionName: 'components_component_params';
+  info: {
+    displayName: 'Params';
+  };
+  attributes: {
+    contactFormAction: Schema.Attribute.String;
+    copyRight: Schema.Attribute.String;
+    footerContent: Schema.Attribute.String;
+    tagManagerId: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentPlanItem extends Struct.ComponentSchema {
   collectionName: 'components_component_plan_items';
   info: {
@@ -130,6 +155,35 @@ export interface DynamicZoneFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface DynamicZoneSetting extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_settings';
+  info: {
+    displayName: 'setting';
+  };
+  attributes: {
+    pagination: Schema.Attribute.Integer;
+    summaryLength: Schema.Attribute.Integer;
+  };
+}
+
+export interface DynamicZoneSite extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_sites';
+  info: {
+    displayName: 'site';
+  };
+  attributes: {
+    basePath: Schema.Attribute.String;
+    baseUrl: Schema.Attribute.String;
+    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    logoHeight: Schema.Attribute.Integer;
+    logoText: Schema.Attribute.String;
+    logoWidth: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+    tralingSlash: Schema.Attribute.String;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -207,12 +261,16 @@ declare module '@strapi/strapi' {
       'component.features': ComponentFeatures;
       'component.info': ComponentInfo;
       'component.menu-item': ComponentMenuItem;
+      'component.meta-data': ComponentMetaData;
+      'component.params': ComponentParams;
       'component.plan-item': ComponentPlanItem;
       'component.service-item': ComponentServiceItem;
       'dynamic-zone.banner': DynamicZoneBanner;
       'dynamic-zone.call-to-action': DynamicZoneCallToAction;
       'dynamic-zone.features': DynamicZoneFeatures;
       'dynamic-zone.footer': DynamicZoneFooter;
+      'dynamic-zone.setting': DynamicZoneSetting;
+      'dynamic-zone.site': DynamicZoneSite;
       'shared.button': SharedButton;
       'shared.gallery': SharedGallery;
       'shared.intro': SharedIntro;
