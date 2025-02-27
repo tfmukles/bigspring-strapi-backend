@@ -3,10 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ComponentFaqItem extends Struct.ComponentSchema {
   collectionName: 'components_component_faq_items';
   info: {
+    description: '';
     displayName: 'faq item';
   };
   attributes: {
-    answer: Schema.Attribute.String;
+    answer: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
