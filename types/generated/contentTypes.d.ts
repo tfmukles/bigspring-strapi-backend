@@ -558,7 +558,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
 export interface ApiIconIcon extends Struct.SingleTypeSchema {
   collectionName: 'icons';
   info: {
-    displayName: 'Icon';
+    description: '';
+    displayName: 'social';
     pluralName: 'icons';
     singularName: 'icon';
   };
