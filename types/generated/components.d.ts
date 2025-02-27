@@ -170,6 +170,7 @@ export interface DynamicZoneSetting extends Struct.ComponentSchema {
 export interface DynamicZoneSite extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_sites';
   info: {
+    description: '';
     displayName: 'site';
   };
   attributes: {
@@ -181,7 +182,7 @@ export interface DynamicZoneSite extends Struct.ComponentSchema {
     logoText: Schema.Attribute.String;
     logoWidth: Schema.Attribute.Integer;
     title: Schema.Attribute.String;
-    tralingSlash: Schema.Attribute.String;
+    trailingSlash: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
   };
 }
 
@@ -192,6 +193,7 @@ export interface SharedButton extends Struct.ComponentSchema {
     displayName: 'button';
   };
   attributes: {
+    enable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     label: Schema.Attribute.String;
     link: Schema.Attribute.String;
   };

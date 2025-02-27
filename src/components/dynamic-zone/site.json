@@ -1,7 +1,8 @@
 {
   "collectionName": "components_dynamic_zone_sites",
   "info": {
-    "displayName": "site"
+    "displayName": "site",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,28 +15,27 @@
     "basePath": {
       "type": "string"
     },
-    "tralingSlash": {
-      "type": "string"
-    },
     "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "logoWidth": {
       "type": "integer"
@@ -45,6 +45,10 @@
     },
     "logoText": {
       "type": "string"
+    },
+    "trailingSlash": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
