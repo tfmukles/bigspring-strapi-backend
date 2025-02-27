@@ -96,7 +96,7 @@ export interface ComponentServiceItem extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
-    content: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -108,11 +108,12 @@ export interface ComponentServiceItem extends Struct.ComponentSchema {
 export interface DynamicZoneBanner extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_banners';
   info: {
+    description: '';
     displayName: 'Banner';
   };
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
-    content: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
