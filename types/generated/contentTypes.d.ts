@@ -427,37 +427,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCallToActionCallToAction extends Struct.SingleTypeSchema {
-  collectionName: 'call_to_actions';
-  info: {
-    displayName: 'call to action';
-    pluralName: 'call-to-actions';
-    singularName: 'call-to-action';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    button: Schema.Attribute.Component<'shared.button', true>;
-    content: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::call-to-action.call-to-action'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -595,6 +564,10 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    callToAction: Schema.Attribute.Component<
+      'dynamic-zone.call-to-action',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1125,7 +1098,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog-index.blog-index': ApiBlogIndexBlogIndex;
       'api::blog.blog': ApiBlogBlog;
-      'api::call-to-action.call-to-action': ApiCallToActionCallToAction;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::homepage.homepage': ApiHomepageHomepage;
