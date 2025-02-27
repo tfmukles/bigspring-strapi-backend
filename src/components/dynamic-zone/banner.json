@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_dynamic_zone_banners",
+  "info": {
+    "displayName": "Banner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    }
+  }
+}
