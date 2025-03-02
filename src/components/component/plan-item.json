@@ -24,6 +24,13 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.button"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "month",
+        "year"
+      ]
     }
   }
 }

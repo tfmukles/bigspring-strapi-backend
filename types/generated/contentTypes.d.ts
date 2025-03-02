@@ -413,7 +413,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
@@ -589,6 +589,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
 export interface ApiNotfoundNotfound extends Struct.SingleTypeSchema {
   collectionName: 'notfounds';
   info: {
+    description: '';
     displayName: 'notfound';
     pluralName: 'notfounds';
     singularName: 'notfound';
@@ -607,7 +608,7 @@ export interface ApiNotfoundNotfound extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    richText: Schema.Attribute.Blocks;
+    richText: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

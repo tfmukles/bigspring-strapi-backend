@@ -88,6 +88,7 @@ export interface ComponentPlanItem extends Struct.ComponentSchema {
     price: Schema.Attribute.Decimal;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['month', 'year']>;
   };
 }
 
