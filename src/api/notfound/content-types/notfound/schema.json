@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "notfounds",
+  "info": {
+    "singularName": "notfound",
+    "pluralName": "notfounds",
+    "displayName": "notfound"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "richText": {
+      "type": "blocks"
+    }
+  }
+}
