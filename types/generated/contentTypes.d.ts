@@ -372,7 +372,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogIndexBlogIndex extends Struct.SingleTypeSchema {
   collectionName: 'blog_indices';
   info: {
-    displayName: 'blog-index';
+    description: '';
+    displayName: 'Blog-index';
     pluralName: 'blog-indices';
     singularName: 'blog-index';
   };
@@ -402,7 +403,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
     description: '';
-    displayName: 'blog';
+    displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
   };
@@ -431,7 +432,7 @@ export interface ApiConfigConfig extends Struct.SingleTypeSchema {
   collectionName: 'configs';
   info: {
     description: '';
-    displayName: 'config';
+    displayName: 'Config';
     pluralName: 'configs';
     singularName: 'config';
   };
@@ -464,7 +465,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
     description: '';
-    displayName: 'contact';
+    displayName: 'Contact';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -496,7 +497,7 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
     description: '';
-    displayName: 'faq';
+    displayName: 'Faq';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -524,7 +525,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
     description: '';
-    displayName: 'homepage';
+    displayName: 'Homepage';
     pluralName: 'homepages';
     singularName: 'homepage';
   };
@@ -560,7 +561,7 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
   collectionName: 'navigations';
   info: {
     description: '';
-    displayName: 'menu';
+    displayName: 'Menu';
     pluralName: 'navigations';
     singularName: 'navigation';
   };
@@ -590,7 +591,7 @@ export interface ApiNotfoundNotfound extends Struct.SingleTypeSchema {
   collectionName: 'notfounds';
   info: {
     description: '';
-    displayName: 'notfound';
+    displayName: 'Notfound';
     pluralName: 'notfounds';
     singularName: 'notfound';
   };
@@ -649,7 +650,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
   collectionName: 'pricings';
   info: {
     description: '';
-    displayName: 'pricing';
+    displayName: 'Pricing';
     pluralName: 'pricings';
     singularName: 'pricing';
   };
