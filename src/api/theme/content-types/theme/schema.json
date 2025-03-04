@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "colors": {
+      "type": "json",
+      "default": {
+        "default": {
+          "theme_color": {
+            "primary": "#0aa8a7",
+            "body": "#fff",
+            "border": "#e9e9e9",
+            "theme_light": "#edf6f5"
+          },
+          "text_color": {
+            "default": "#555",
+            "dark": "#222"
+          }
+        }
+      }
+    },
+    "fonts": {
+      "type": "json",
+      "default": {
+        "font_family": {
+          "primary": "Lato:wght@300;400;700",
+          "primary_type": "sans-serif"
+        },
+        "font_size": {
+          "base": "16",
+          "scale": "1.250"
+        }
+      }
+    }
+  }
+}
