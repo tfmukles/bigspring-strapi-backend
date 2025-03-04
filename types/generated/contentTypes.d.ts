@@ -713,56 +713,6 @@ export interface ApiSocialSocial extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiThemeTheme extends Struct.SingleTypeSchema {
-  collectionName: 'themes';
-  info: {
-    displayName: 'Theme';
-    pluralName: 'themes';
-    singularName: 'theme';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    colors: Schema.Attribute.JSON &
-      Schema.Attribute.DefaultTo<{
-        default: {
-          text_color: {
-            dark: '#222';
-            default: '#555';
-          };
-          theme_color: {
-            body: '#fff';
-            border: '#e9e9e9';
-            primary: '#0aa8a7';
-            theme_light: '#edf6f5';
-          };
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    fonts: Schema.Attribute.JSON &
-      Schema.Attribute.DefaultTo<{
-        font_family: {
-          primary: 'Lato:wght@300;400;700';
-          primary_type: 'sans-serif';
-        };
-        font_size: {
-          base: '16';
-          scale: '1.250';
-        };
-      }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1283,7 +1233,6 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::pricing.pricing': ApiPricingPricing;
       'api::social.social': ApiSocialSocial;
-      'api::theme.theme': ApiThemeTheme;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
