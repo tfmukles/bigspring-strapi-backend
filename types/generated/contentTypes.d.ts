@@ -713,7 +713,7 @@ export interface ApiSocialSocial extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
+export interface ApiThemeTheme extends Struct.SingleTypeSchema {
   collectionName: 'themes';
   info: {
     displayName: 'Theme';
@@ -721,7 +721,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     singularName: 'theme';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     colors: Schema.Attribute.JSON &

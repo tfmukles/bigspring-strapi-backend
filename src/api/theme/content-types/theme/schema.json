@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "themes",
   "info": {
     "singularName": "theme",
@@ -7,7 +7,7 @@
     "displayName": "Theme"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
     "colors": {
